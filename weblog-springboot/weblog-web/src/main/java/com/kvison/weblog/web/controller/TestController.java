@@ -5,6 +5,8 @@ import com.kvison.weblog.common.enums.BizException;
 import com.kvison.weblog.common.enums.ResponseEnum;
 import com.kvison.weblog.common.utils.Response;
 import com.kvison.weblog.web.model.User;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.ResponseEntity;
@@ -26,9 +28,11 @@ import java.util.stream.Collectors;
  */
 @RestController
 @Slf4j
+@Api(tags = "首页模块")
 public class TestController {
     @PostMapping("/test")
     @ApiOperationLog(description = "测试接口是否通过")
+    @ApiOperation(value = "接口0")
     public User test(@RequestBody User user){
         return user;
     }
