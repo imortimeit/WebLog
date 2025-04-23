@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.stream.Collectors;
 
 /**
@@ -94,4 +97,20 @@ public class TestController {
         return Response.success();
     }
 
+
+    //6,测试JacksonConfig序列化和反序列化
+    //若自定义 Jackson 生效了，则能够被正常序列化，则日志中会正常打印 user 对象参数。当注释掉 JacksonConfig 的配置
+    //则打印user对象会报错。因为无法反序列化前台传入的日期类型
+    @PostMapping("/test6")
+    @ApiOperationLog(description = "测试JacksonConfig序列化和反序列化")
+    @ApiOperation(value = "测试acksonConfig")
+    public Response test6(@RequestBody @Validated User user){
+        //打印入参
+        log.info("入参：{}",user);
+        user.setCreateTime(LocalDateTime.now());
+        user.setUpdateDate(LocalDate.now());
+        user.setReserveTime(LocalTime.now());
+
+        return Response.success(user);
+    }
 }
