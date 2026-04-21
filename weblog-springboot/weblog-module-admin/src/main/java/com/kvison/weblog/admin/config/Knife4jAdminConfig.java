@@ -36,7 +36,7 @@ public class Knife4jAdminConfig {
 
     public ApiInfo buildApiInfo(){
         return new ApiInfoBuilder()
-                .title("Admin 后台接口")
+                .title("Weblog 博客 Admin 后台接口文档")
                 .description("Weblog 是一款由 Spring Boot + Vue 3.2 + Vite 4.3 开发的前后端分离博客。")
                 .termsOfServiceUrl("https://github.com/kvison/weblog")
                 .contact(new Contact("kvison", "https://github.com/kvison/weblog", "2102321426@qq.com"))

@@ -1,8 +1,9 @@
 package com.kvison.weblog.web.controller;
 
 import com.kvison.weblog.common.aspect.ApiOperationLog;
-import com.kvison.weblog.common.enums.BizException;
+import com.kvison.weblog.common.exception.BizException;
 import com.kvison.weblog.common.enums.ResponseEnum;
+import com.kvison.weblog.common.utils.JsonUtil;
 import com.kvison.weblog.common.utils.Response;
 import com.kvison.weblog.web.model.User;
 import io.swagger.annotations.Api;
@@ -15,7 +16,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
@@ -111,6 +111,19 @@ public class TestController {
         user.setUpdateDate(LocalDate.now());
         user.setReserveTime(LocalTime.now());
 
+        return Response.success(user);
+    }
+
+    //7.测试Security
+    @PostMapping("/admin/test7")
+    @ApiOperationLog(description = "测试Security")
+    @ApiOperation(value = "测试Security")
+    public Response test7(@RequestBody @Validated User user){
+        log.info("打印入参：", JsonUtil.toJson( user));
+
+        user.setCreateTime(LocalDateTime.now());
+        user.setUpdateDate(LocalDate.now());
+        user.setReserveTime(LocalTime.now());
         return Response.success(user);
     }
 }

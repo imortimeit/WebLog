@@ -1,6 +1,5 @@
 package com.kvison.weblog.common.exception;
 
-import com.kvison.weblog.common.enums.BizException;
 import com.kvison.weblog.common.enums.ResponseEnum;
 import com.kvison.weblog.common.utils.Response;
 import lombok.extern.slf4j.Slf4j;

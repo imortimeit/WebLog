@@ -18,6 +18,8 @@ public enum ResponseEnum implements BaseExceptionInterface {
     SYSTEM_ERROR("10000","网络异常正在修复"),
     //------------业务异常状态码-------------
     PRODUCT_NOT_FOND("20000","产品不存在"),
+    LOGIN_FAIL("20000", "登录失败"),
+    USERNAME_OR_PWD_ERROR("20001", "用户名或密码错误"),
     //------------参数异常状态码-------------
     PARAM_NOT_VALID("10001", "参数错误"),
     ;

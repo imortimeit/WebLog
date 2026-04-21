@@ -1,4 +1,4 @@
-package com.kvison.weblog.common.enums;
+package com.kvison.weblog.common.exception;
 
 import com.kvison.weblog.common.exception.BaseExceptionInterface;
 import lombok.Getter;

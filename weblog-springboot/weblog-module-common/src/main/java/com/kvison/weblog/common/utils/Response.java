@@ -1,6 +1,6 @@
 package com.kvison.weblog.common.utils;
 
-import com.kvison.weblog.common.enums.BizException;
+import com.kvison.weblog.common.exception.BizException;
 import com.kvison.weblog.common.exception.BaseExceptionInterface;
 import lombok.Data;
 
