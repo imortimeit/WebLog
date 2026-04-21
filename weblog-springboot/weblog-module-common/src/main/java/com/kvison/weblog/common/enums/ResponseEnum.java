@@ -22,6 +22,7 @@ public enum ResponseEnum implements BaseExceptionInterface {
     USERNAME_OR_PWD_ERROR("20001", "用户名或密码错误"),
     //------------参数异常状态码-------------
     PARAM_NOT_VALID("10001", "参数错误"),
+    UNAUTHORIZED("20002", "无访问权限，请先登录！"),
     ;
 
     private String errorCode;
